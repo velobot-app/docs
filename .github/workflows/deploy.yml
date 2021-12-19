@@ -11,6 +11,8 @@ on:
       - sidebars.js
       - blog/**
       - .github/workflows/deploy.yml
+      - docusaurus.config.js
+      - package.json
 
 jobs:
   deploy:
