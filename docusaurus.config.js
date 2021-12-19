@@ -6,7 +6,7 @@ const config = {
   title: "Every Man's Land",
   tagline: "A companion app for adventurers, athletes, and explorers.",
   url: "https://docs.everymansland.com",
-  baseUrl: "/docs/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
