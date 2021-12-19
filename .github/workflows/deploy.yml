@@ -10,6 +10,7 @@ on:
       - src/**
       - sidebars.js
       - blog/**
+      - .github/workflows/deploy.yml
 
 jobs:
   deploy:
