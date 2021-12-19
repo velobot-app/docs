@@ -39,7 +39,7 @@ GET /activities/{activity}/snapshots
 | Name | Type | In | Description |
 |-|-|-|-|
 | `activity` | string | path | |
-| `t` | integer | query | Can be any non-negative integer. Used for cursor pagination through all `Snapshot`s for the `Activity` |
+| `t` | integer | query | Can be any non-negative integer. Returns snapshots at least `t` seconds after the `started_at` value of the `Activity` |
 | `limit` | integer | query | Can be between 1 and 100 inclusively.<br />Defaults to 25 |
 #### Response
 ```
