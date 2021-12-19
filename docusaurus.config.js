@@ -11,7 +11,8 @@ const config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "everymansland",
-  projectName: "api",
+  projectName: "docs",
+  deploymentBranch: "gh-pages",
   presets: [
     [
       "classic",
