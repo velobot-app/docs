@@ -6,13 +6,14 @@ const config = {
   title: "Every Man's Land",
   tagline: "A companion app for adventurers, athletes, and explorers.",
   url: "https://docs.everymansland.com",
-  baseUrl: "/",
+  baseUrl: "/docs",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "everymansland",
   projectName: "docs",
   deploymentBranch: "gh-pages",
+  trailingSlash: false,
   presets: [
     [
       "classic",
