@@ -65,15 +65,20 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Getting started",
                 to: "/docs/intro",
               },
             ],
           },
-          // {
-          //   title: "Community",
-          //   items: [
-          // },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "GitHub",
+                href: "https://github.com/everymansland",
+              },
+            ],
+          },
           {
             title: "More",
             items: [
@@ -81,10 +86,6 @@ const config = {
                 label: "Blog",
                 to: "/blog",
               },
-              // {
-              //   label: "GitHub",
-              //   href: "https://github.com/everymansland/api",
-              // },
             ],
           },
         ],
