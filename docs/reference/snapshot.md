@@ -9,25 +9,26 @@ import Rpm from "../../src/components/units/Rpm"
 import Watts from "../../src/components/units/Watts"
 import C from "../../src/components/units/C"
 import Sec from "../../src/components/units/Sec"
+import SportsList from "../../src/components/SportsList"
 
 # Snapshot
 `Snapshots` are sparse collections of data associated with an `Activity`.
 
 ## Schema
-| Key | Type | Unit | Description |
-|-|-|-|-|
+| Key | Type | Unit | Sport | Description |
+|-|-|-|-|-|
 | `id` | integer | | |
-| `altitude` | decimal | <Km /> | Distance above sea-level in km |
-| `cadence` | integer | <Rpm /> | Revolutions, steps, strokes, etc. per minute |
-| `cumulative_distance` | decimal | <Km /> | Cumulative distance in km |
-| `heart_rate` | integer | <Bpm /> | Heart rate in bpm |
-| `location` | geojson | | Spherical coordinates (latitude &amp; longitude) |
-| `power` | integer | <Watts /> | Current power in watts |
-| `rider_position` | string | | One of `seated` or `standing` |
-| `speed` | decimal | <Kmh /> | Speed in km/h |
-| `t` | integer | <Sec /> | Time offset from start of activity |
-| `temperature` | integer | <C /> | Temperature in C |
-| `timestamp` | timestamp | | |
+| `altitude` | decimal | <Km /> | | Distance above sea-level in km |
+| `cadence` | integer | <Rpm /> | <SportsList sports={["cycling", "running", "walking"]} /> | Revolutions, steps, strokes, etc. per minute |
+| `cumulative_distance` | decimal | <Km /> | <SportsList sports={["cycling", "running", "walking"]} /> | Cumulative distance in km |
+| `heart_rate` | integer | <Bpm /> | <SportsList sports={["cycling", "running", "walking"]} /> | Heart rate in bpm |
+| `location` | geojson | | <SportsList sports={["cycling", "running", "walking", "fishing"]} /> | Spherical coordinates (latitude &amp; longitude) |
+| `power` | integer | <Watts /> | <SportsList sports={["cycling"]} /> | Current power in watts |
+| `rider_position` | string | | <SportsList sports={["cycling"]} /> | One of `seated` or `standing` |
+| `speed` | decimal | <Kmh /> | <SportsList sports={["cycling", "running", "walking"]} /> | Speed in km/h |
+| `t` | integer | <Sec /> | all | Time offset from start of activity |
+| `temperature` | integer | <C /> | all | Temperature in C |
+| `timestamp` | timestamp | | all | |
 
 ## API
 ### List snapshots
