@@ -25,6 +25,7 @@ GET /performance/cycling/activities
 | `count` | integer | | Number of activities in the given history period |
 | `distance` | decimal | <Km /> | |
 | `duration` | integer | <Sec /> | |
+| `elevation_gain` | decimal | <Km /> | |
 | `power` | integer | <Watts /> | Average power weighted by activity duration |
 
 #### Parameters
