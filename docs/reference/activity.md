@@ -43,7 +43,7 @@ performance in an individual activity, or across time.
 |-|-|-|-|
 | `id` | integer | | |
 | `sport` | string | | One of the [supported sport types](/docs/sport-types) |
-| `critical_power` | array | [<Sec />, <Watts />] | Draws the critical power curve for the activity. Items are themselves arrays with two items: the first is the time offset from activity start and the second is highest critical power for that period, e.g. `[3600, 230]` describes a 1-hour critical power of 230 watts |
+| `power_curve` | array | [<Sec />, <Watts />] | Draws the power curve for the activity. Items are themselves arrays with two items: the first is the time offset from activity start and the second is highest average power for that period, e.g. `[3600, 230]` describes a 1-hour critical power of 230 watts |
 | `started_at` | timestamp | | The start of the activity |
 | `condition` | object | | Current condition of the subject at the start of the activity |
 
@@ -78,7 +78,7 @@ GET /activities
         "cycling_ftp": 180,
         "weight": 67.5
       },
-      "critical_power": [[1, 800], [5, 600], [10, 400]],
+      "power_curve": [[1, 800], [5, 600], [10, 400]],
       "snapshots_url": "https://api.everymansland.com/activities/1/snapshots",
       "sport": "cycling",
       "started_at": "2021-12-14T11:12:03Z"
@@ -106,7 +106,7 @@ GET /activities/{activity}
       "cycling_ftp": 180,
       "weight": 67.5
     },
-  "critical_power": [[1, 800], [5, 600], [10, 400]],
+  "power_curve": [[1, 800], [5, 600], [10, 400]],
   "snapshots_url": "https://api.everymansland.com/activities/1/snapshots",
   "sport": "cycling",
   "started_at": "2021-12-14T11:12:03Z"
@@ -132,7 +132,7 @@ PATCH /activities/{activity}
       "cycling_ftp": 180,
       "weight": 67.5
     },
-  "critical_power": [[1, 800], [5, 600], [10, 400]],
+  "power_curve": [[1, 800], [5, 600], [10, 400]],
   "snapshots_url": "https://api.everymansland.com/activities/1/snapshots",
   "sport": "cycling",
   "started_at": "2021-12-14T11:12:03Z"

@@ -48,8 +48,9 @@ GET /performance/cycling/activities
 }
 ```
 
-### Get critical power curve
-Show the power curve for all matching activities within the given duration.
+### Get power curve
+Show power curve for all matching activities within the given duration,
+selecting best available powers for each duration
 ```
 GET /performance/cycling/power-curve
 ```
@@ -148,7 +149,7 @@ GET /performance/cycling/critical-power
 | Name | Type | In | Description |
 |-|-|-|-|
 | `group` | string | query | **Required**. Can be one of `1w, 2w, 3w, 4w, 1m, 2m, 3m, 6m, 1y`. Returns best critical power for the given value history period<br />Defaults to `4w` |
-| `duration` | integer | query | **Required**. Can be a any positive integer. Returns best critical powers for the given value duration.<br />Defaults to `1` |
+| `duration` | integer | query | **Required**. Can be any positive integer. Returns best critical powers for the given value duration.<br />Defaults to `1` |
 
 #### Response
 ```
