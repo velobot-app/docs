@@ -1,0 +1,17 @@
+.badge {
+  display: inline-block;
+  border-radius: 100px;
+  border-width: var(--ifm-badge-border-width);
+  border-color: var(--ifm-color-warning);
+  color: var(--ifm-color-warning);
+  font-size: 14px;
+  border-style: solid;
+  padding: 0.2rem 0.5rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.required {
+  border-color: var(--ifm-color-danger);
+  color: var(--ifm-color-danger);
+}
