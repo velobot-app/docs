@@ -17,10 +17,8 @@ Access tokens are signed and encrypted JWTs generated from the
 
 ## Requests
 Requests that require authentication include an <AuthenticationBadge required />
-label in the API reference. Requests that may require authentication instead
-show <AuthenticationBadge />. These requests handle authentication in varying
-ways, by e.g. excluding data or raising an error. These behaviors should be
-described in the request's reference entry.
+label in the API reference. Requests that may require authentication, or have
+different behavior when authenticated instead show <AuthenticationBadge />
 
 ## Errors
 Unless otherwise specified, all requests (regardless of whether authentication
@@ -29,8 +27,7 @@ authentication will always result in an error if the access token is invalid,
 expired, or missing. Requests that do not require authentication will only
 result in errors if such a token is actually provided in the `Authorization`
 header, even though the request would otherwise succeed. Accordingly, it's
-best to refrain from providing an access token unless the request requires
-authentication.
+best to refrain from providing an access token unless necessary.
 ### Invalid access token
 ```
 401 Unauthorized
@@ -40,6 +37,7 @@ authentication.
 }
 ```
 ### Blacklisted access token
+i.e. the user has logged out
 ```
 401 Unauthorized
 
