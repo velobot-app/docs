@@ -33,10 +33,10 @@ Commonly because no user exists with the provided email
 ```
 ---
 ### Refresh a session <AuthenticationBadge required />
-Authenticated requests provide a short-lived (1 hour) JWT. When this JWT
-expires, a new one must be generated, authenticated by a refresh token that
-is created upon successful session creation. Once this refresh token expires,
-the user will have to create a new session.
+Creating a session provides a short-lived (1 hour) JWT. When this JWT expires,
+a new one must be generated, authenticated by a refresh token cookie that
+accompanies the initial JWT. Refresh tokens are valid for much longer, but
+once they (and their current JWT) expire, the user will have to log in again.
 ```
 PATCH /session
 ```
