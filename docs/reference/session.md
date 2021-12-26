@@ -42,7 +42,7 @@ PATCH /session
 ```
 #### Response
 ##### Success
-```
+```json
 200 OK
 
 {
