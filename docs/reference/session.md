@@ -83,7 +83,3 @@ i.e. the user has logged out
 ```
 401 Unauthorized
 ```
-##### Invalid refresh token
-```
-401 Unauthorized
-```
