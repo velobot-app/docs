@@ -1,6 +1,7 @@
 ---
 ---
 
+import AuthenticationBadge from "../../src/components/AuthenticationBadge"
 import Kcal from "../../src/components/units/Kcal"
 import Km from "../../src/components/units/Km"
 import Kmh from "../../src/components/units/Kmh"
@@ -11,7 +12,7 @@ import Watts from "../../src/components/units/Watts"
 Exposes sport-specific performance metrics.
 
 ## Cycling
-### Get activity history
+### Get activity history <AuthenticationBadge required />
 Show high level activity stats
 ```
 GET /performance/cycling/activities
@@ -49,9 +50,9 @@ GET /performance/cycling/activities
 }
 ```
 
-### Get power curve
-Show power curve for all matching activities within the given duration,
-selecting best available powers for each duration
+### Get power curve <AuthenticationBadge required />
+Show power curve for the authenticated user's cycling activities during the
+time period, selecting best available critical powers
 ```
 GET /performance/cycling/power-curve
 ```
@@ -140,8 +141,8 @@ GET /performance/cycling/power-curve
 ]
 ```
 
-### Get critical power history
-Retrieves historic critical power values.
+### Get critical power history <AuthenticationBadge required />
+Retrieves historic critical power values for the authenticated user
 ```
 GET /performance/cycling/critical-power
 ```
