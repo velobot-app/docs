@@ -1,6 +1,7 @@
 ---
 ---
 
+import AuthenticationBadge from "../../src/components/AuthenticationBadge"
 import Sec from "../../src/components/units/Sec"
 import Watts from "../../src/components/units/Watts"
 
@@ -48,8 +49,13 @@ performance in an individual activity, or across time.
 | `condition` | object | | Current condition of the subject at the start of the activity |
 
 ## API
-### List activities
-Lists activities submitted by the authenticated user.
+### List activities <AuthenticationBadge />
+Lists activities. When not authenticated, only published activities are
+returned. As an authenticated user, the results include:
+* Published activities
+* Your own activities
+* Your friends' non-hidden activities
+
 ```
 GET /activities
 ```
@@ -87,7 +93,14 @@ GET /activities
 }
 ```
 
-### Get an activity
+### Get an activity <AuthenticationBadge />
+Retrieve data for a specific activity. Just like listing, non-authenticated
+users may only retrieve published activities, and authenticated users can
+access:
+* Published activities
+* Your own activities
+* Your friends' non-hidden activities
+
 ```
 GET /activities/{activity}
 ```
@@ -113,7 +126,8 @@ GET /activities/{activity}
 }
 ```
 
-### Update an activity
+### Update an activity <AuthenticationBadge required />
+Only the authenticated user's activities may be updated
 ```
 PATCH /activities/{activity}
 ```
@@ -139,7 +153,7 @@ PATCH /activities/{activity}
 }
 ```
 
-### Create an activity
+### Create an activity <AuthenticationBadge required />
 Create an activity for the authenticated user with the provided FIT file. The
 response will have very little data, as files are processed in a background
 job to extract data, generate `Snapshots`, etc.
@@ -160,7 +174,8 @@ POST /activities
 }
 ```
 
-### Delete an activity
+### Delete an activity <AuthenticationBadge required />
+Only the authenticated user's activities may be deleted
 ```
 DELETE /activities/{activity}
 ```
