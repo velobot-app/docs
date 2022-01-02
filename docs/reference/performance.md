@@ -15,6 +15,67 @@ import Watts from "../../src/components/units/Watts"
 Exposes sport-specific performance metrics.
 
 ## Cycling
+### Get condition history <AuthenticationBadge required />
+Retrieve historic rider condition from uploaded activities.
+```
+GET /performance/cycling/condition
+```
+#### Schema
+| Name | Type | Unit | Description |
+|-|-|-|-|
+| `activity_url` | string | | Link to the activity that recorded this condition |
+| `date` | date | | Date of the activity, or for manual entries, the date of entry |
+| `ftp` | integer | <Watts /> | |
+| `weight` | decimal | <Kg /> | |
+#### Parameters
+| Name | Type | In | Description |
+|-|-|-|-|
+| `group` | string | query | Can be one of `week`, `month`, or `year`. If empty, returns best powers for all recorded activites.<br />Defaults to `week` |
+#### Response
+```
+200 OK
+```
+```
+{
+  "conditions": [
+    {
+      "activity_url": "https://api.everymansland.com/activities/1",
+      "date": "2020-11-24",
+      "ftp": 175,
+      "weight": 72.1
+    },
+    {
+      "activity_url": "https://api.everymansland.com/activities/2",
+      "date": "2020-11-27",
+      "ftp": 175,
+      "weight": 72.2
+    },
+    {
+      "date": "2020-11-28",
+      "ftp": 175,
+      "weight": 71.4
+    },
+    {
+      "activity_url": "https://api.everymansland.com/activities/3",
+      "date": "2020-12-11",
+      "ftp": 204,
+      "weight": 70.7
+    },
+    {
+      "activity_url": "https://api.everymansland.com/activities/4",
+      "date": "2020-12-14",
+      "ftp": 204,
+      "weight": 70.1
+    },
+    {
+      "date": "2020-12-30",
+      "ftp": 217
+      "weight": 68.3
+    }
+  ]
+}
+```
+
 ### Get activity history <AuthenticationBadge required />
 Show high level activity stats. Averages are weighted by moving time.
 ```
