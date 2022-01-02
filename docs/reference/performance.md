@@ -2,9 +2,12 @@
 ---
 
 import AuthenticationBadge from "../../src/components/AuthenticationBadge"
+import Bpm from "../../src/components/units/Bpm"
 import Kcal from "../../src/components/units/Kcal"
 import Km from "../../src/components/units/Km"
 import Kmh from "../../src/components/units/Kmh"
+import M from "../../src/components/units/M"
+import Rpm from "../../src/components/units/Rpm"
 import Sec from "../../src/components/units/Sec"
 import Watts from "../../src/components/units/Watts"
 
@@ -13,7 +16,7 @@ Exposes sport-specific performance metrics.
 
 ## Cycling
 ### Get activity history <AuthenticationBadge required />
-Show high level activity stats
+Show high level activity stats. Averages are weighted by moving time.
 ```
 GET /performance/cycling/activities
 ```
@@ -21,18 +24,24 @@ GET /performance/cycling/activities
 #### Schema
 | Name | Type | Unit | Description |
 |-|-|-|-|
-| `average_speed` | decimal | <Kmh /> | |
+| `average_cadence` | integer | <Rpm /> | Average cadence weighted by activity moving time |
+| `average_calories_burned` | integer | <Rpm /> | Average calories burned weighted by activity moving time |
+| `average_heart_rate` | integer | <Bpm /> | Average cadence weighted by activity moving time |
+| `average_normalized_power` | integer | <Watts /> | Average normalized power weighted by activity moving time |
+| `average_power` | integer | <Watts /> | Average power weighted by activity moving time |
+| `average_speed` | decimal | <Kmh /> | Average speed weighted by activity moving time |
 | `calories` | integer | <Kcal /> | |
 | `count` | integer | | Number of activities in the given history period |
 | `distance` | decimal | <Km /> | |
-| `duration` | integer | <Sec /> | |
-| `elevation_gain` | decimal | <Km /> | |
-| `power` | integer | <Watts /> | Average power weighted by activity duration |
+| `elevation_gain` | integer | <M /> | Cumulative elevation gain |
+| `elevation_loss` | integer | <M /> | Cumulative elevation loss |
+| `epoch` | timestamp | | Time period start, if a `group` parameter is provided |
+| `moving_time` | integer | <Sec /> | Cumulative activity moving time |
 
 #### Parameters
 | Name | Type | In | Description |
 |-|-|-|-|
-| `h` | string | query | Can be one of `1w, 4w, 1m, 3m, 6m, 1y`. If empty, returns best powers for all recorded activites.<br />Defaults to `1w` |
+| `group` | string | query | Can be one of `week`, `month`, or `year`. If empty, returns best powers for all recorded activites.<br />Defaults to `week` |
 
 #### Response
 ```
