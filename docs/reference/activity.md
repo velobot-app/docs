@@ -29,8 +29,13 @@ created manually by uploading a FIT file to EML.
 Users can attach photos, comment on their own, or others' activities, so long
 as they have permission to do so.
 #### Visibility
-Activities can be marked as private (viewable only to the submitter),
-friends-only (viewable only to friends), or public (viewable to any EML user.)
+Activities have a `visibility` level that affects who can view it and any
+associated data. This only affects individual activities; aggregates will
+include data from all activities regardless of `visibility` setting.
+
+* `hidden`: Only the submitter
+* `shared`: Friends and groups
+* `published`: Any user or visitor
 #### Comments
 Comments can be disabled on individual activities, applying to all users that
 have access to the activity. Users can also opt to disable comments on all
@@ -135,6 +140,10 @@ PATCH /activities/{activity}
 | Name | Type | In | Description |
 |-|-|-|-|
 | `activity` | string | path | |
+| `power_curve` | array | body | |
+| `sport` | string | body | |
+| `started_at`| timestamp | body | |
+| `visibility` | string | body | Can be one of `hidden`, `shared`, or `published`
 #### Response
 ```
 200 OK
