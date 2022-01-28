@@ -86,7 +86,6 @@ GET /performance/cycling/activities
 | Name | Type | Unit | Description |
 |-|-|-|-|
 | `average_cadence` | integer | <Rpm /> | Average cadence weighted by activity moving time |
-| `average_calories_burned` | integer | <Rpm /> | Average calories burned weighted by activity moving time |
 | `average_heart_rate` | integer | <Bpm /> | Average cadence weighted by activity moving time |
 | `average_normalized_power` | integer | <Watts /> | Average normalized power weighted by activity moving time |
 | `average_power` | integer | <Watts /> | Average power weighted by activity moving time |
