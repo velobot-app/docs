@@ -55,7 +55,7 @@ GET /users/{user}
 #### Parameters
 | Name | Type | In | Description |
 |-|-|-|-|
-| `id` | integer | path | |
+| `user` | integer | path | User `id` |
 #### Response
 ```
 200 OK
@@ -68,6 +68,39 @@ GET /users/{user}
   "last_name": "Roe",
   "sex": "female"
 }
+```
+---
+### Add friend <AuthenticationBadge required />
+Send a friend request to, or accept any received friend request from the
+specified user. Does nothing if a friend request has already been sent, or
+the user is already a friend. This endpoint is idempotent, and returns no
+content.
+```
+PUT /users/{user}/friend
+```
+#### Parameters
+| Name | Type | In | Description |
+|-|-|-|-|
+| `user` | integer | path | User `id` |
+#### Response
+```
+204 No Content
+```
+---
+### Remove friend <AuthenticationBadge required />
+Reject any friend request received from the specified user, or remove them
+from friends. Does nothing if there is no pending friend request, or the user
+is not a friend. This endpoint is idempotent, and returns no content.
+```
+DELETE /users/{user}/friend
+```
+#### Parameters
+| Name | Type | In | Description |
+|-|-|-|-|
+| `user` | integer | path | User `id` |
+#### Response
+```
+204 No Content
 ```
 ---
 ### Get authenticated user <AuthenticationBadge required />
