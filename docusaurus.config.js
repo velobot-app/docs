@@ -89,7 +89,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Every Man's Land. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Every Man's Land. Built with Docusaurus. TSS® is a registered trademark of TrainingPeaks, LLC`,
       },
       prism: {
         theme: lightCodeTheme,

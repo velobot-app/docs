@@ -97,6 +97,7 @@ GET /performance/cycling/activities
 | `elevation_loss` | integer | <M /> | Cumulative elevation loss |
 | `epoch` | timestamp | | Time period start, if a `group` parameter is provided |
 | `moving_time` | integer | <Sec /> | Cumulative activity moving time |
+| `training_stress_score` | decimal | | Total TSS&reg; (Training Stress Score&reg;) |
 
 #### Parameters
 | Name | Type | In | Description |
