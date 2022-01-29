@@ -90,7 +90,7 @@ GET /performance/cycling/activities
 | `average_normalized_power` | integer | <Watts /> | Average normalized power weighted by activity moving time |
 | `average_power` | integer | <Watts /> | Average power weighted by activity moving time |
 | `average_speed` | decimal | <Kmh /> | Average speed weighted by activity moving time |
-| `calories` | integer | <Kcal /> | |
+| `calories_burned` | integer | <Kcal /> | |
 | `count` | integer | | Number of activities in the given history period |
 | `distance` | decimal | <Km /> | |
 | `elevation_gain` | integer | <M /> | Cumulative elevation gain |
